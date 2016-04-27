@@ -1,0 +1,20 @@
+--- configure.orig	2015-05-04 01:29:57.000000000 +0800
++++ configure	2016-04-26 15:42:36.000000000 +0800
+@@ -5435,7 +5435,7 @@ _ACEOF
+ 
+ 
+ # Check for GMP, MPFR and MPC
+-gmplibs="-lmpc -lmpfr -lgmp"
++gmplibs="-lm -lmpc -lmpfr -lgmp"
+ gmpinc=
+ have_gmp=no
+ 
+@@ -7153,7 +7153,7 @@ for module in ${configdirs} ; do
+ /^@if $module\$/d
+ /^@endif $module\$/d
+ /^@if $module-$host_bootstrap_suffix\$/d
+-/^@endif $module-$host_bootstrap_suffix\$/d"
++/^@endif $module-$host_bootstrap_suffix\$/d" 
+ done
+ extrasub_target=
+ for module in ${target_configdirs} ; do
