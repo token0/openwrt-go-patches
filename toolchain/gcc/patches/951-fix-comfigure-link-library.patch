@@ -1,0 +1,11 @@
+--- a/configure
++++ b/configure
+@@ -5435,7 +5435,7 @@ _ACEOF
+ 
+ 
+ # Check for GMP, MPFR and MPC
+-gmplibs="-lmpc -lmpfr -lgmp"
++gmplibs="-lm -lmpc -lmpfr -lgmp"
+ gmpinc=
+ have_gmp=no
+

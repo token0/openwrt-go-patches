@@ -1,5 +1,5 @@
---- gotools/Makefile.am.orig	2015-03-25 03:50:31.000000000 +0800
-+++ gotools/Makefile.am	2016-04-27 14:23:36.000000000 +0800
+--- a/gotools/Makefile.am
++++ b/gotools/Makefile.am
 @@ -39,7 +39,7 @@ GOCFLAGS = $(CFLAGS_FOR_TARGET)
  GOCOMPILE = $(GOCOMPILER) $(GOCFLAGS)
  
@@ -8,4 +8,4 @@
 +GOLINK = $(GOCOMPILER) $(GOCFLAGS) $(AM_GOCFLAGS) $(LDFLAGS) $(AM_LDFLAGS) -o $@ -static-libgo -static-libgcc -Wl,-dy -lgcc_s
  
  cmdsrcdir = $(srcdir)/../libgo/go/cmd
- 
+
