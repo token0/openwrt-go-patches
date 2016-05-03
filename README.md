@@ -25,5 +25,9 @@ make menuconfig
 
 make V=s
 
-If happen error:"crt1.o cann't found",create directory $(TOOLCHAIN_DIR)/gcc-5.3.0-final/i486-openwrt-linux-gnu/libs
+If happen error:"crt1.o cann't found",
+
+mkdir -p $(TOOLCHAIN_DIR)/gcc-5.3.0-final/lib/gcc/i486-openwrt-linux-gnu/5.3.0/
+
+create directory $(TOOLCHAIN_DIR)/gcc-5.3.0-final/i486-openwrt-linux-gnu/libs
 ,copy all files in $(TOOLCHAIN_DIR)/libgcc-dev/lib/ directoryto new created directory.
