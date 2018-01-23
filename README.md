@@ -4,30 +4,17 @@ This a patches of gccgo and libgo for openwrt.
 
 Copy 2 directories to openwrt buildroot directory.
 
-git clone https://github.com/GeertJohan/openwrt-go
-
-git checkout add-gccgo-and-libgo
-
 make menuconfig
 
--> Advanced configuration options
+Advanced configuration options (for developers)  --->
+    Toolchain Options  --->
+        [x] Build/install gccgo compiler
+        C library implementation
+            [x] Use glibc
 
--> Toolchain options
+make -j1 V=s
 
-....
--> Select Build/Install gccgo
-
-....
-
--> C library implementation
-
--> Use eglibc
-
-make V=s
-
-If happen error:"crt1.o cann't found",
-
-mkdir -p $(TOOLCHAIN_DIR)/gcc-5.3.0-final/lib/gcc/i486-openwrt-linux-gnu/5.3.0/
-
-create directory $(TOOLCHAIN_DIR)/gcc-5.3.0-final/i486-openwrt-linux-gnu/libs
-,copy all files in $(TOOLCHAIN_DIR)/libgcc-dev/lib/ directory to new created directory.
+If error: "crt1.o can't found",
+    mkdir -p $(TOOLCHAIN_DIR)/gcc-5.3.0-final/lib/gcc/i486-openwrt-linux-gnu/5.3.0/
+        mkdir $(TOOLCHAIN_DIR)/gcc-5.3.0-final/i486-openwrt-linux-gnu/libs
+        cp -r $(TOOLCHAIN_DIR)/libgcc-dev/lib/ $(TOOLCHAIN_DIR)/gcc-5.3.0-final/i486-openwrt-linux-gnu/libs
